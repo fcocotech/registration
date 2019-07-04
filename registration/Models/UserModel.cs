@@ -20,6 +20,28 @@ namespace registration.Models
         public string email { get; set; }
 
         private DBModel dbconn;
+
+        public void AddUserEF()
+        {
+            using(CMSContext cntxt = new CMSContext())
+            {
+                cntxt.Database.EnsureCreated();
+                cntxt.User.Add(new UserModel
+                {
+                    fname = this.fname,
+                    lname = this.lname,
+                    username = this.username,
+                    password = this.password,
+                    st_addr = this.st_addr,
+                    city = this.city,
+                    zip = this.zip,
+                    tel = this.tel,
+                    email = this.email
+                });
+
+                cntxt.SaveChanges();
+            }
+        }
         public void AddUser()
         {
             this.dbconn = new DBModel();

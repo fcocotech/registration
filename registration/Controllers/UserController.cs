@@ -48,7 +48,7 @@ namespace registration.Controllers
                 this.objUser.zip = collection["zip"].ToString();
                 this.objUser.username = "fcipriano";
                 this.objUser.password = "qwe123!@#";
-                this.objUser.AddUser();
+                this.objUser.AddUserEF();
                 // TODO: Add insert logic here
 
                 return RedirectToAction();
