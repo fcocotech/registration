@@ -21,19 +21,19 @@ namespace registration.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<UserModel>(entity =>
-            {
-                entity.HasKey(e => e.id);
-                //entity.Property(e => e.fname).IsRequired();
-            });
+            //modelBuilder.Entity<UserModel>(entity =>
+            //{   
+            //    entity.HasKey(e => e.id);
+            //    //entity.Property(e => e.fname).IsRequired();
+            //});
 
-            modelBuilder.Entity<CustomerModel>(entity =>
-            {
-                entity.HasKey(e => e.id);
-                //entity.Property(e => e.Title).IsRequired();
-                //entity.HasOne(d => d.Publisher)
-                  //.WithMany(p => p.Books);
-            });
+            //modelBuilder.Entity<CustomerModel>(entity =>
+            //{
+            //    entity.HasKey(e => e.id);
+            //    //entity.Property(e => e.Title).IsRequired();
+            //    //entity.HasOne(d => d.Publisher)
+            //      //.WithMany(p => p.Books);
+            //});
         }
     }
 }
