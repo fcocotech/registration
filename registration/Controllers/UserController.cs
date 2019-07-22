@@ -15,7 +15,6 @@ namespace registration.Controllers
         // GET: User
         public ActionResult Index()
         {
-            this.objUser = new UserModel();
             return View();
         }
 
@@ -48,10 +47,11 @@ namespace registration.Controllers
                 this.objUser.zip = collection["zip"].ToString();
                 this.objUser.username = "fcipriano";
                 this.objUser.password = "qwe123!@#";
+                this.objUser.timestamp = System.DateTime.Now;
                 this.objUser.AddUserEF();
                 // TODO: Add insert logic here
 
-                return RedirectToAction();
+                return RedirectToAction("Index");
             }
             catch(Exception ex)
             {

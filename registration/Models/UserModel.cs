@@ -19,6 +19,7 @@ namespace registration.Models
         public string tel { get; set; }
         public string email { get; set; }
 
+        public DateTime timestamp { get; set; }
         private DBModel dbconn;
 
         public void AddUserEF()
